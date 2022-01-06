@@ -2,7 +2,6 @@ let inputDir = { x: 0, y: 0 };
 const bgmusic = new Audio("res/bgmusic.mp3");
 const gameover = new Audio("res/gameover.wav");
 const turn = new Audio("res/turn.wav");
-//const turn = new Audio("https://interactive-examples.mdn.mozilla.net/media/examples/t-rex-roar.mp3");
 const food = new Audio("res/food.wav");
 let second = 5;
 let score = 0 ; 
@@ -45,7 +44,7 @@ function main(ctime) {
 
 
         if(iscolide(snakearry)){
-             bgmusic.pause();
+            //  bgmusic.pause();
             gameover.play();
 
            
@@ -54,7 +53,7 @@ function main(ctime) {
             snakearry = { x: 13, y: 15 };
     
             score = 0 ;
-            bgmusic.play();
+            // bgmusic.play();
             
         }
 
@@ -176,3 +175,28 @@ window.addEventListener("keydown", (e) => {
 
     }
 })
+ function arrowup(){
+    inputDir = { x: 0, y: 1 } // start the game 
+    turn.play()
+    inputDir.x = 0 ; 
+    inputDir.y = -1;
+
+ }
+ function arrowdown(){
+    inputDir = { x: 0, y: 1 } // start the game 
+    turn.play()
+    inputDir.x = 0 ; 
+    inputDir.y = 1;
+ }
+ function arrowleft(){
+    inputDir = { x: 0, y: 1 } // start the game 
+    turn.play()
+    inputDir.x = -1; 
+    inputDir.y = 0;
+ }
+ function arrowright(){
+    inputDir = { x: 0, y: 1 } // start the game 
+    turn.play()
+    inputDir.x = 1; 
+    inputDir.y = 0;
+ }
