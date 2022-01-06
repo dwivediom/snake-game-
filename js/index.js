@@ -45,7 +45,7 @@ function main(ctime) {
 
 
         if(iscolide(snakearry)){
-            //  bgmusic.pause();
+             bgmusic.pause();
             gameover.play();
 
            
@@ -54,7 +54,7 @@ function main(ctime) {
             snakearry = { x: 13, y: 15 };
     
             score = 0 ;
-            // bgmusic.play();
+            bgmusic.play();
             
         }
 
