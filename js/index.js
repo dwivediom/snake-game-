@@ -1,7 +1,8 @@
 let inputDir = { x: 0, y: 0 };
 const bgmusic = new Audio("../res/bgmusic.mp3");
 const gameover = new Audio("../res/gameover.wav");
-const turn = new Audio("../res/turn.wav");
+//const turn = new Audio("../res/turn.wav");
+const turn = new Audio("https://interactive-examples.mdn.mozilla.net/media/examples/t-rex-roar.mp3");
 const food = new Audio("../res/food.wav");
 let second = 5;
 let score = 0 ; 
