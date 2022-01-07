@@ -65,16 +65,13 @@ function main(ctime) {
             score += 1 ; 
             second = second+0.2;
             scoreB.innerHTML= " Score:"+score; 
-            // this if statement is for high score
-            // if(score >= hiScoreval){
-            //     hiScoreval = score; 
-            //     localStorage.setItem("hiScore",JSON.stringify(hiScoreval));
-            //     hiscorebox.innerHTML= `High Score: ${hiScoreval}`;
+            if(score>hiscoreval){
+                hiscoreval = score;
+                localStorage.setItem("hiscore", JSON.stringify(hiscoreval));
+                hiscorebox.innerHTML = "HiScore: " + hiscoreval;
+            }
 
-            // }
-
-            snakearry.unshift({x:snakearry[0].x + inputDir.x, y:
-                snakearry[0].y+ inputDir.y})
+            snakearry.unshift({x:snakearry[0].x + inputDir.x, y:snakearry[0].y+ inputDir.y})
              let a = 2 ; 
              let b = 16 ;
              snakefood= { x: Math.round(a+ (b-a)*Math.random()), y: Math.round(a+ (b-a)*Math.random() )}
@@ -126,17 +123,15 @@ function main(ctime) {
 
 //game logic 
 
-// let hiScore = localStorage.getItem("hiScore");
-// if ( hiScore===null){
-//   hiScoreval= 2; 
-//  localStorage.setItem("hiScore",JSON.stringify(hiScoreval));
-// }
-// else{
-  
-//  hiScoreval= JSON.parse(hiScore);                  // high score error in this line 
-//     hiscorebox.innerHTML=" High Score:" +hiScoreval;
-     
-// }
+ let hiscore = localStorage.getItem("hiscore");
+if(hiscore === null){
+    hiscoreval = 0;
+    localStorage.setItem("hiscore", JSON.stringify(hiscoreval))
+}
+else{
+    hiscoreval = JSON.parse(hiscore);
+    hiscorebox.innerHTML = "HiScore: " + hiscore;
+}
 
 window.requestAnimationFrame(main)
 
